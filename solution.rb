@@ -1,11 +1,10 @@
 require 'sinatra'
 
 get '/' do
-  if params[:counter]
-    @counter = params[:counter].to_i
-  else
-    session[:counter] = 0
-    @counter = session[:counter]
-  end
-  erb :suma_numeros
+  erb :abuela_sorda
+end
+
+post '/abuela_dice' do
+  @mensaje = params[:abuela_dijo]
+  erb :abuela_dijo
 end
